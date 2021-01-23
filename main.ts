@@ -34,6 +34,7 @@ input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
 //  get the result from server
 radio.onReceivedString(function on_received_string(receivedString: string) {
     
+    lock = false
     if (receivedString == "true") {
         basic.showIcon(IconNames.Yes)
     } else if (receivedString == "false") {
@@ -42,7 +43,6 @@ radio.onReceivedString(function on_received_string(receivedString: string) {
         basic.showString("Error: Unknown received string.")
     }
     
-    lock = false
 })
 let number = 0
 let lock = false

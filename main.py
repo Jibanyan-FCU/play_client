@@ -31,13 +31,13 @@ input.on_button_pressed(Button.AB, on_button_pressed_ab)
 # get the result from server
 def on_received_string(receivedString):
     global lock
+    lock = False
     if receivedString == "true":
         basic.show_icon(IconNames.YES)
     elif receivedString == "false":
         basic.show_icon(IconNames.NO)
     else:
         basic.show_string("Error: Unknown received string.")
-    lock = False
 radio.on_received_string(on_received_string)
 
 number = 0
