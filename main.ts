@@ -2,7 +2,7 @@
 input.onButtonPressed(Button.A, function on_button_pressed_a() {
     
     if (!lock) {
-        number = 1
+        basic.showNumber(1)
         music.playTone(Note.C, music.beat(1))
         radio.sendNumber(1)
         lock = true
@@ -13,7 +13,7 @@ input.onButtonPressed(Button.A, function on_button_pressed_a() {
 input.onButtonPressed(Button.B, function on_button_pressed_b() {
     
     if (!lock) {
-        number = 2
+        basic.showNumber(2)
         music.playTone(Note.C, music.beat(1))
         radio.sendNumber(2)
         lock = true
@@ -24,7 +24,7 @@ input.onButtonPressed(Button.B, function on_button_pressed_b() {
 input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
     
     if (!lock) {
-        number = 3
+        basic.showNumber(3)
         music.playTone(Note.C, music.beat(1))
         radio.sendNumber(3)
         lock = true
@@ -48,8 +48,5 @@ let number = 0
 let lock = false
 radio.setGroup(5)
 basic.forever(function on_forever() {
-    if (lock) {
-        basic.showNumber(number)
-    }
     
 })

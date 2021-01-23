@@ -1,8 +1,8 @@
 # send number 1 if button A is pressed
 def on_button_pressed_a():
-    global lock, number
+    global lock
     if not (lock):
-        number = 1
+        basic.show_number(1)
         music.play_tone(Note.C, music.beat(1))
         radio.send_number(1)
         lock = True
@@ -12,7 +12,7 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 def on_button_pressed_b():
     global lock, number
     if not (lock):
-        number = 2
+        basic.show_number(2)
         music.play_tone(Note.C, music.beat(1))
         radio.send_number(2)
         lock = True
@@ -22,7 +22,7 @@ input.on_button_pressed(Button.B, on_button_pressed_b)
 def on_button_pressed_ab():
     global lock, number
     if not (lock):
-        number = 3
+        basic.show_number(3)
         music.play_tone(Note.C, music.beat(1))
         radio.send_number(3)
         lock = True
@@ -45,6 +45,5 @@ lock = False
 radio.set_group(5)
 
 def on_forever():
-    if lock:
-        basic.show_number(number)
+    pass
 basic.forever(on_forever)
